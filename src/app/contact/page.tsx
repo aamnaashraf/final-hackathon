@@ -4,34 +4,37 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 const Contact = () => {
   return (
     <div>
-      {/* Hero Section */}
-      <div className="relative h-screen">
-        <div className="absolute inset-0">
-          <Image
-            src="/bg image 2.png" 
-            alt="Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black bg-gray-300 bg-opacity-50">
-          <div className="mb-4">
-            <Image
-              src="/logo.png" 
-              alt="Logo"
-              width={60}
-              height={60}
-              className="object-contain"
-            />
-          </div>
-          
-          <h1 className="text-4xl font-bold mt-2">Contact</h1>
-          <p className="text-sm text-black">
-            <a href="/" className="font-bold text-black hover:underline">Home</a> &gt; Contact
-          </p>
-        </div>
-      </div>
+      <header className="relative bg-white shadow-md pt-16">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src="/bg image 2.png"
+                  alt="Shop Background"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative container mx-auto px-4 py-8 text-center">
+                {/* Logo */}
+                <div className="flex justify-center mb-2">
+                  <Image
+                    src="/logo.png"
+                    alt="Shop Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                {/* Shop Title */}
+                <h1 className="text-4xl font-bold text-black">Contact</h1>
+                {/* Breadcrumb */}
+                <p className="text-black text-sm">
+                  <a href="/" className="hover:text-black text-bold">Home</a> &gt; Contact
+                </p>
+              </div>
+            </header>  {/* Hero Section */}
+     
+      
 
       {/* Get in Touch Section */}
       <div className="bg-white py-16 px-8">

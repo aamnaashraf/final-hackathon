@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const TopPicksPage = () => {
   return (
@@ -72,9 +73,9 @@ const TopPicksPage = () => {
 
        {/* View More Section */}
        <div className="text-center mt-12">
-        <a href="#view-more" className="text-lg text-gray-600 underline hover:text-gray-800">
+        <Link href="/shop" className="text-lg text-gray-600 underline hover:text-gray-800">
           View More
-        </a>
+        </Link>
       </div>
     </section>
   );

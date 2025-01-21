@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaRegClock } from 'react-icons/fa';
 
 const BlogsPage = () => {
@@ -66,12 +67,12 @@ const BlogsPage = () => {
 
       {/* View All Posts Section */}
       <div className="text-center mt-16">
-        <a
-          href="#view-all"
+        <Link
+          href="/blog"
           className="text-lg text-gray-800 underline hover:text-gray-600 transition duration-300"
         >
           View All Posts
-        </a>
+        </Link>
       </div>
     </section>
   );

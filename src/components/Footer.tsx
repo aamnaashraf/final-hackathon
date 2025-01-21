@@ -5,16 +5,16 @@ const Footer = () => {
   return (
     <footer className="bg-white text-black py-10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex flex-wrap justify-between items-start md:items-center gap-6">
           {/* Address Section */}
-          <div className="mb-6 md:mb-0">
+          <div className="flex-1 min-w-[200px]">
             <p className="text-gray-400 text-sm">
-              400 University Drive Suite 200 Coral Gables, <br/>FL 33134 USA
+              400 University Drive Suite 200 Coral Gables, <br /> FL 33134 USA
             </p>
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex flex-wrap md:flex-nowrap gap-8">
             {/* Links Group 1 */}
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-400">Links</h3>
@@ -67,11 +67,11 @@ const Footer = () => {
             {/* Newsletter Section */}
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-400">Newsletter</h3>
-              <form className="flex">
+              <form className="flex flex-wrap md:flex-nowrap gap-2">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
-                  className="border border-gray-700 rounded-l px-4 py-2 mr-2 text-gray-900"
+                  className="border border-gray-700 rounded-l px-4 py-2 text-gray-900 flex-1"
                 />
                 <button
                   type="submit"
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
 
         {/* "All Rights Reserved" Section */}
-        <div className="mt-8 border-t border-gray-700 pt-4 text-laft">
+        <div className="mt-8 border-t border-gray-700 pt-4 text-left">
           <p className="text-sm text-gray-400">
             © 2022 Meubel House. All Rights Reserved.
           </p>
