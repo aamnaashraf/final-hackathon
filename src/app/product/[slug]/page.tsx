@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, Key, JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from 'react';
+import { useState, useEffect, Key,  } from 'react';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ const ProductPage = ({ params: { slug } }: { params: { slug: string } }) => {
   useEffect(() => {
     const fetchProductData = async () => {
       const query = `*[_type == 'product' && slug.current == '${slug}']{
-        name, price, Paragraph, image, thumbnailImages, block
+        name, price,category, product_id,Paragraph, image, thumbnailImages, block
       }`;
       const data = await client.fetch(query);
       setProductData(data[0] || null);

@@ -1,40 +1,48 @@
+'use client'
 import Image from "next/image";
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { useState } from "react";
+import Link from "next/link";
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false); 
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitted(true); 
+  };
+
   return (
     <div>
       <header className="relative bg-white shadow-md pt-16">
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <Image
-                  src="/bg image 2.png"
-                  alt="Shop Background"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative container mx-auto px-4 py-8 text-center">
-                {/* Logo */}
-                <div className="flex justify-center mb-2">
-                  <Image
-                    src="/logo.png"
-                    alt="Shop Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                  />
-                </div>
-                {/* Shop Title */}
-                <h1 className="text-4xl font-bold text-black">Contact</h1>
-                {/* Breadcrumb */}
-                <p className="text-black text-sm">
-                  <a href="/" className="hover:text-black text-bold">Home</a> &gt; Contact
-                </p>
-              </div>
-            </header>  {/* Hero Section */}
-     
-      
+        <div className="absolute inset-0">
+          <Image
+            src="/bg image 2.png"
+            alt="Shop Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative container mx-auto px-4 py-8 text-center">
+          <div className="flex justify-center mb-2">
+            <Image
+              src="/logo.png"
+              alt="Shop Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </div>
+          <h1 className="text-4xl font-bold text-black">Contact</h1>
+          <p className="text-black text-sm">
+            <a href="/" className="hover:text-black text-bold">
+              Home
+            </a>{" "}
+            &gt; Contact
+          </p>
+        </div>
+      </header>
 
       {/* Get in Touch Section */}
       <div className="bg-white py-16 px-8">
@@ -50,7 +58,6 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="flex flex-col justify-center">
-              {/* Address */}
               <div className="flex items-start mb-6">
                 <div className="mr-4 text-black">
                   <FaMapMarkerAlt size={30} />
@@ -63,8 +70,6 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Phone */}
               <div className="flex items-start mb-6">
                 <div className="mr-4 text-black">
                   <FaPhoneAlt size={30} />
@@ -77,8 +82,6 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Working Time */}
               <div className="flex items-start">
                 <div className="mr-4 text-black">
                   <FaClock size={30} />
@@ -94,9 +97,8 @@ const Contact = () => {
             </div>
 
             {/* Form */}
-            <div>
-              <form className="bg-gray-50 p-8 rounded-md shadow-md">
-                {/* Name */}
+            <div className="relative">
+              <form onSubmit={handleSubmit} className="bg-gray-50 p-8 rounded-md shadow-md">
                 <div className="mb-4">
                   <label className="block text-sm font-bold text-black mb-2" htmlFor="name">
                     Your Name
@@ -106,10 +108,10 @@ const Contact = () => {
                     id="name"
                     placeholder="Enter your name"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-gray-200"
+                    required
                   />
                 </div>
 
-                {/* Email */}
                 <div className="mb-4">
                   <label className="block text-sm font-bold text-black mb-2" htmlFor="email">
                     Email Address
@@ -119,10 +121,10 @@ const Contact = () => {
                     id="email"
                     placeholder="Enter your email"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-gray-200"
+                    required
                   />
                 </div>
 
-                {/* Subject */}
                 <div className="mb-4">
                   <label className="block text-sm font-bold text-black mb-2" htmlFor="subject">
                     Subject
@@ -132,10 +134,10 @@ const Contact = () => {
                     id="subject"
                     placeholder="Enter subject"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-gray-200"
+                    required
                   />
                 </div>
 
-                {/* Message */}
                 <div className="mb-6">
                   <label className="block text-sm font-bold text-black mb-2" htmlFor="message">
                     Message
@@ -145,10 +147,10 @@ const Contact = () => {
                     rows={4}
                     placeholder="Enter your message"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-gray-200"
+                    required
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-32 bg-black text-white font-bold py-2 rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-300"
@@ -156,15 +158,29 @@ const Contact = () => {
                   Submit
                 </button>
               </form>
+
+              {/* Success Message BELOW the form */}
+              {isSubmitted && (
+                <div className="mt-6">
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-8 py-6 rounded-md shadow-md text-center">
+                    <h3 className="text-xl font-bold mb-2">Thank You!</h3>
+                    <p>Your information has been submitted successfully.</p>
+                    <Link
+                      href="/"
+                      className="mt-4 inline-block bg-black text-white font-bold py-2 px-4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-300"
+                    >
+                      Go Back to Home
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Additional Section */}
       <div className="bg-pink-50 py-16">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {/* Free Delivery */}
           <div>
             <h3 className="text-lg font-bold text-black">Free Delivery</h3>
             <p className="text-gray-600 mt-2">
@@ -172,8 +188,6 @@ const Contact = () => {
               without any hidden charges.
             </p>
           </div>
-
-          {/* 90 Days Return */}
           <div>
             <h3 className="text-lg font-bold text-black">90 Days Return</h3>
             <p className="text-gray-600 mt-2">
@@ -181,8 +195,6 @@ const Contact = () => {
               on all purchases.
             </p>
           </div>
-
-          {/* Secure Payment */}
           <div>
             <h3 className="text-lg font-bold text-black">Secure Payment</h3>
             <p className="text-gray-600 mt-2">

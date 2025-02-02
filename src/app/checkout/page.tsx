@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ShippingForm from '@/components/ShippingForm';
-import { createShipment } from '@/services/shipEngine';
+
 import getStripePromise from '@/sanity/lib/stripe';
 import { useCart } from '@/context/cartContext';
 

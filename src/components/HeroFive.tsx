@@ -15,13 +15,15 @@ const BlogsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Blog Card 1 */}
         <div className="text-center">
-          <Image
-            src="/laptop 1.png" 
-            alt="Blog Image 1"
-            width={400}
-            height={250}
-            className="object-cover rounded-lg"
-          />
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src="/laptop 1.png"
+              alt="Blog Image 1"
+              width={400}
+              height={250}
+              className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+            />
+          </div>
           <p className="text-lg text-gray-700 mt-4 mb-2">Going all-in with millennial design</p>
           <p className="font-semibold text-gray-800 underline">Read More</p>
           <div className="flex items-center justify-center mt-2 space-x-2">
@@ -32,13 +34,15 @@ const BlogsPage = () => {
 
         {/* Blog Card 2 */}
         <div className="text-center">
-          <Image
-            src="/laptop 2.png" 
-            alt="Blog Image 2"
-            width={400}
-            height={250}
-            className="object-cover rounded-lg"
-          />
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src="/laptop 2.png"
+              alt="Blog Image 2"
+              width={400}
+              height={250}
+              className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+            />
+          </div>
           <p className="text-lg text-gray-700 mt-4 mb-2">Going all-in with millennial design</p>
           <p className="font-semibold text-gray-800 underline">Read More</p>
           <div className="flex items-center justify-center mt-2 space-x-2">
@@ -49,13 +53,15 @@ const BlogsPage = () => {
 
         {/* Blog Card 3 */}
         <div className="text-center">
-          <Image
-            src="/laptop 3.png" 
-            alt="Blog Image 3"
-            width={400}
-            height={250}
-            className="object-cover rounded-lg"
-          />
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src="/laptop 3.png"
+              alt="Blog Image 3"
+              width={400}
+              height={250}
+              className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+            />
+          </div>
           <p className="text-lg text-gray-700 mt-4 mb-2">Going all-in with millennial design</p>
           <p className="font-semibold text-gray-800 underline">Read More</p>
           <div className="flex items-center justify-center mt-2 space-x-2">
@@ -79,3 +85,4 @@ const BlogsPage = () => {
 };
 
 export default BlogsPage;
+

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.2.0",
+    "@react-pdf/renderer": "^4.1.6",
     "@sanity/cli": "^3.69.0",
     "@sanity/client": "^6.24.3",
     "@sanity/image-url": "^1.1.0",
@@ -19,17 +20,20 @@
     "font-awesome": "^4.7.0",
     "next": "14.2.5",
     "next-sanity": "^9.8.35",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-barcode": "^1.5.3",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
     "react-is": "^19.0.0",
     "react-toastify": "^11.0.3",
     "sanity": "^3.69.0",
     "shipengine": "^1.0.7",
     "stripe": "^17.5.0",
-    "styled-components": "^6.1.14"
+    "styled-components": "^6.1.14",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
+    "@clerk/nextjs": "^6.10.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,6 +41,6 @@
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }

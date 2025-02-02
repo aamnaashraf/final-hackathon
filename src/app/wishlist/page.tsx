@@ -6,21 +6,79 @@ import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import AdditionalSection from "@/components/AdditionalSection";
 
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
 
+  
+
   if (wishlistItems.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-        <p className="text-center text-gray-700 text-lg">
-          Your wishlist is empty. Go back to{" "}
-          <Link href="/shop" className="text-blue-500 hover:underline font-bold">
-            shop
-          </Link>{" "}
-          to add items.
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4">
+        {/* Go Back to Shop Link with Arrow */}
+        <div className="w-full max-w-2xl mb-6 mt-6">
+          <Link
+            href="/shop"
+            className="text-blue-500 hover:text-blue-600 font-semibold flex items-center space-x-2 transition-all duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>Go Back to Shop</span>
+          </Link>
+        </div>
+  
+        {/* My Wishlist Heading */}
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">My Wishlist</h1>
+  
+        {/* Descriptive Paragraph */}
+        <p className="text-gray-600 text-center max-w-2xl mb-8">
+          Your wishlist is where you can save your favorite items and keep track of
+          what you love. Start adding items to your wishlist to make shopping
+          easier!
         </p>
+  
+        {/* Empty Wishlist Box */}
+        <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100 text-center w-full max-w-2xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-16 w-16 text-gray-400 mx-auto mb-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            />
+          </svg>
+          <p className="text-gray-700 text-lg mb-6">
+            Your wishlist is empty. Start adding items to save them for later!
+          </p>
+        </div>
+  
+        {/* Continue Shopping Button */}
+        <div className="mt-8">
+          <Link
+            href="/shop"
+            className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition-all duration-300"
+          >
+            Continue Shopping
+          </Link>
+        </div>
       </div>
     );
   }
@@ -118,6 +176,7 @@ const Wishlist = () => {
           </Link>
         </div>
       </div>
+      <AdditionalSection />
     </div>
   );
 };

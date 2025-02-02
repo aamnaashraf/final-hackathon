@@ -12,6 +12,16 @@ export const product = defineType({
       
       }),
       {
+        name: 'category',
+        title: 'Category',
+        type: 'string',
+      },
+      {
+        name: 'product_id',
+        title: 'Product ID',
+        type: 'string',
+      },
+      {
         name: "price",
         title: "Price",
         type: "number",
