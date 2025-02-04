@@ -121,7 +121,7 @@ const Cart = () => {
       {/* Left Section */}
       <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden">
+         <div className="flex flex-col md:flex-row gap-6 bg-white rounded-lg overflow-hidden">
             <div className="w-full md:w-2/3 p-4">
               {cartItems.length > 0 && (
                 <div className="overflow-x-auto">
@@ -201,30 +201,34 @@ const Cart = () => {
               )}
             </div>
 
-            <div className="w-full md:w-1/3 bg-[#FBEBB5] p-6 rounded-lg mt-6 md:mt-0">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
-                Cart Totals
-              </h2>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-gray-600">Subtotal</span>
-                <span className="font-medium text-gray-700">
-                  Rs. {subtotal.toLocaleString()}
-                </span>
-              </div>
-              <br></br>
-              <div className="flex justify-between items-center mb-6">
-                <span className="text-gray-600">Total</span>
-                <span className="font-bold text-yellow-600">
-                  Rs. {subtotal.toLocaleString()}
-                </span>
-              </div>
-              <Link href="/checkout">
-                <button className="w-60 ml-20 bg-[#FBEBB5] text-black border-2 border-black font-medium py-1.5 rounded-md hover:bg-yellow-400 transition mt-24">
-                  Check Out
-                </button>
-              </Link>
-            </div>
-          </div>
+                 
+{/* rigjt section*/}
+            <div className="w-full md:w-1/3 bg-[#FBEBB5] p-6 rounded-lg">
+  <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
+    Cart Totals
+  </h2>
+  <div className="flex justify-between items-center mb-2">
+    <span className="text-gray-600">Subtotal</span>
+    <span className="font-medium text-gray-700">
+      Rs. {subtotal.toLocaleString()}
+    </span>
+  </div>
+  <br />
+  <div className="flex justify-between items-center mb-6">
+    <span className="text-gray-600">Total</span>
+    <span className="font-bold text-yellow-600">
+      Rs. {subtotal.toLocaleString()}
+    </span>
+  </div>
+  <div className="flex justify-center">
+    <Link href="/checkout">
+      <button className="bg-[#FBEBB5] text-black border-2 border-black font-medium py-1.5 px-6 rounded-md hover:bg-yellow-400 transition mt-6">
+        Check Out
+      </button>
+    </Link>
+  </div>
+</div>
+</div>
         </div>
       </div>
       <AdditionalSection />
